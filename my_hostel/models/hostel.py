@@ -17,6 +17,7 @@ class HostelRoom(models.Model):
     room_no = fields.Char(string="Room Number", required=True)
     other_info = fields.Text("Other Information",
                              help="Enter more information")
+    category_id = fields.Many2one('hostel.room.category', string="Category")
     description = fields.Html('Description')
     room_rating = fields.Float('Hostel Average Rating', digits=(14, 4))
     member_ids = fields.Many2many('hostel.room.member', string='Members')
