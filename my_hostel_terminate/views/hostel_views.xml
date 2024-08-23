@@ -1,0 +1,12 @@
+<odoo>
+    <record id="hostel_room_view_form" model="ir.ui.view">
+        <field name="name">hostel.room.view.form.inherit.my_hostel.terminate</field>
+        <field name="model">hostel.room</field>
+        <field name="inherit_id" ref="my_hostel.hostel_room_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='room_no']" position="after">
+                <field name="date_termination"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
