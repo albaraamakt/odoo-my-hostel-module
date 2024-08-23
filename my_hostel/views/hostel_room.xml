@@ -28,9 +28,10 @@
                     <group>
                         <field name="name"/>
                         <field name="room_no"/>
-                        <field name="cateogry_id"/>
+                        <field name="category_id"/>
                     </group>
                     <group>
+                        <field name="remarks"/>
                         <field name="description"/>
                     </group>
                 </group>

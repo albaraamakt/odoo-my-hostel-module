@@ -26,6 +26,27 @@ class HostelRoom(models.Model):
         ('available', 'Available'),
         ('closed', 'Closed')],
         'State', default="draft")
+    remarks = fields.Text('Remarks')
+
+    @api.model
+    def create(self, values):
+        if not self.user_has_groups('my_hostel.group_hostel_manager'):
+            if values.get('remarks'):
+                raise UserError(
+                    'You are not allowed to modify '
+                    'remarks'
+                )
+        return super(HostelRoom, self).create(values)
+    
+    @api.model
+    def write(self, values):
+        if not self.user_has_groups('my_hostel.group_hostel_manager'):
+            if values.get('remarks'):
+                raise UserError(
+                    'You are not allowed to modify '
+                    'manager_remarks'
+                )
+        return super(HostelRoom, self).create(values)
 
     @api.model
     def is_allowed_transition(self, old_state, new_state):
