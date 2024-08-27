@@ -22,12 +22,14 @@
                     <button name="log_all_room_members"  string="Log Members" type="object"/>
                     <button name="create_categories" string="Create Categories" type="object"/>
                     <button name="update_room_no" string="Update Room No" type="object"/>
+                    <button name="grouped_data" string="Get Average Cost" type="object"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <group>
                     <group>
                         <field name="name"/>
                         <field name="room_no"/>
+                        <field name="cost_price"/>
                         <field name="category_id"/>
                     </group>
                     <group>
