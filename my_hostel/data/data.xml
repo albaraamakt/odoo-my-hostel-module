@@ -1,4 +1,4 @@
-<odoo>
+<odoo noupdate="1">
 
     <!-- <record id="base.main_company" model="res.company">
         <field name="name">Packt publishing</field>
@@ -15,4 +15,7 @@
         <field name="country_id" ref="base.uk"/>
     </record>
 
+    <record id="room_category_all" model="hostel.room.category" forcecreate="false">
+        <field name="name">All rooms</field>
+    </record>
 </odoo>
