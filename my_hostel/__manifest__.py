@@ -7,7 +7,7 @@ Manage Library
 ==============
 Description related to Hostel.
     """,  # Supports reStructuredText(RST) format
-    "version": "17.0.1.0.0",
+    "version": "17.0.2.0.0",
     "author": "Serpent Consulting Services Pvt. Ltd.",
     "category": "Tools",
     "website": "http://www.serpentcs.com",
@@ -15,6 +15,7 @@ Description related to Hostel.
     "license": "AGPL-3",
     'data': [
         'data/data.xml',
+        'data/increase_room_price.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/hostel_room.xml',

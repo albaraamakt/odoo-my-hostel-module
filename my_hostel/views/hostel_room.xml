@@ -33,6 +33,7 @@
                         <field name="category_id"/>
                     </group>
                     <group>
+                        <field name="allocation_date"/>
                         <field name="remarks"/>
                         <field name="description"/>
                     </group>

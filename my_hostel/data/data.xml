@@ -2,12 +2,12 @@
 
     <!-- <record id="base.main_company" model="res.company">
         <field name="name">Packt publishing</field>
-    </record>
+    </record> -->
 
     <record id="hostel_room_1" model="hostel.room">
         <field name="name"> Hostel Room 01 </field>
         <field name="room_no">1</field>
-    </record> -->
+    </record>
 
     <record id="res_partner_packt" model="res.partner">
         <field name="name">Packt publishing</field>
@@ -18,4 +18,7 @@
     <record id="room_category_all" model="hostel.room.category" forcecreate="false">
         <field name="name">All rooms</field>
     </record>
+
+    <!-- <delete id="hostel_room_1" model="hostel.room"/> -->
+    <!-- <function model="hostel.room" name="_update_room_price"/> -->
 </odoo>
