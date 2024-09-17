@@ -16,6 +16,7 @@ class HostelRoom(models.Model):
     name = fields.Char(string="Hostel Name", required=True)
     room_no = fields.Char(string="Room Number", required=True)
     other_info = fields.Text("Other Information", help="Enter more information")
+    allocation_date = fields.Date("Allocation Date")
     category_id = fields.Many2one("hostel.room.category", string="Category")
     description = fields.Html("Description")
     room_rating = fields.Float("Hostel Average Rating", digits=(14, 4))
@@ -152,6 +153,11 @@ class HostelRoom(models.Model):
     def sort_rooms_by_rating(self, all_rooms):
         return all_rooms.sorted(key="room_rating")
 
+    @api.model
+    def _update_room_price(self, category):
+        all_rooms = self.search(['category_id', '=', category.id])
+        for room in all_rooms:
+            room.cost_price += 10
 
 class HostelRoomMember(models.Model):
 
