@@ -15,7 +15,6 @@ Description related to Hostel.
     "license": "AGPL-3",
     'data': [
         'data/data.xml',
-        'data/increase_room_price.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/hostel_room.xml',

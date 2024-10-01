@@ -44,6 +44,8 @@ class HostelRoom(models.Model):
 
     @api.model
     def create(self, values):
+        _logger.info("Create Hostel Room %s" % values)
+        _logger.info(" ".center(15, "="))
         if not self.user_has_groups("my_hostel.group_hostel_manager"):
             if values.get("remarks"):
                 raise UserError("You are not allowed to modify " "remarks")
@@ -51,6 +53,7 @@ class HostelRoom(models.Model):
 
     @api.model
     def write(self, values):
+        _logger.info("Updated Hostel Room %s" % values)
         if not self.user_has_groups("my_hostel.group_hostel_manager"):
             if values.get("remarks"):
                 raise UserError("You are not allowed to modify " "manager_remarks")
