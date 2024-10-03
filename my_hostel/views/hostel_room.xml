@@ -18,6 +18,7 @@
             <form>
                 <header>
                     <button name="action_remove_room_members" string="Remove Room Members" type="object" class="btn-primary"/>
+                    <button name="action_category_with_amount" string="Log Category with Amount" type="object" class="btn-primary"/>
                     <button name="make_available" string="Make Available" type="object"/>
                     <button name="make_closed"  string="Make Closed" type="object"/>
                     <button name="log_all_room_members"  string="Log Members" type="object"/>
@@ -26,19 +27,21 @@
                     <button name="grouped_data" string="Get Average Cost" type="object"/>
                     <field name="state" widget="statusbar"/>
                 </header>
-                <group>
+                <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="room_no"/>
-                        <field name="cost_price"/>
-                        <field name="category_id"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="room_no"/>
+                            <field name="cost_price"/>
+                            <field name="category_id"/>
+                        </group>
+                        <group>
+                            <field name="allocation_date"/>
+                            <field name="remarks"/>
+                            <field name="description"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="allocation_date"/>
-                        <field name="remarks"/>
-                        <field name="description"/>
-                    </group>
-                </group>
+                </sheet>
             </form>
         </field>
     </record>

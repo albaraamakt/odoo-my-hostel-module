@@ -166,6 +166,21 @@ class HostelRoom(models.Model):
         student = self.env['hostel.student']
         student.with_context(is_hostel_room=True).action_remove_room()
 
+    def action_category_with_amount(self):
+        if self.category_id.id:
+            query = """
+            SELECT hrc.name
+            FROM hostel_room AS hostel_room
+            JOIN hostel_room_category as hrc ON hrc.id = hostel_room.category_id
+            WHERE hostel_room.category_id = %(cate_id)s;
+            """ % {'cate_id': self.category_id.id}
+
+            self.env.cr.execute(query)
+            result = self.env.cr.fetchall()
+            _logger.warning("Hostel Room With Amount: %s", result)
+        else:
+            _logger.warning("Hostel room doesn't belong to a category")
+
 class HostelRoomMember(models.Model):
 
     _name = "hostel.room.member"
