@@ -161,6 +161,10 @@ class HostelRoom(models.Model):
         all_rooms = self.search(['category_id', '=', category.id])
         for room in all_rooms:
             room.cost_price += 10
+    
+    def action_remove_room_members(self):
+        student = self.env['hostel.student']
+        student.with_context(is_hostel_room=True).action_remove_room()
 
 class HostelRoomMember(models.Model):
 

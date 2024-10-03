@@ -19,6 +19,7 @@ Description related to Hostel.
         'security/ir.model.access.csv',
         'views/hostel_room.xml',
         'views/hostel_room_category_view.xml',
+        'views/hostel_student_views.xml',
     ],
     'demo': [
         'data/demo.xml',
