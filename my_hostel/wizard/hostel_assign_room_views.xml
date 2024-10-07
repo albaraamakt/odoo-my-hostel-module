@@ -1,0 +1,19 @@
+<odoo>
+    <record id="assign_room_wizard_view_form" model="ir.ui.view">
+        <field name="name">Assign Room Wizard View Form</field>
+        <field name="model">hostel.assign.room.wizard</field>
+        <field name="arch" type="xml">
+            <form action="">
+                <sheet>
+                    <group>
+                        <field name="room_id"></field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Update" name="add_room_in_student" class="btn-primary" type="object"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -31,6 +31,7 @@
             <form>
                 <header>
                     <button name="action_assign_room" type="object" string="Assign Room" class="btn-primary"/>
+                    <button name="paid" type="object" string="Paid" class="btn-default"/>
                     <field string="Status" name="status" widget="statusbar"/>
                 </header>
                 <sheet>

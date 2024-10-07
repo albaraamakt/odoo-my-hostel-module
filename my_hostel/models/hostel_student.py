@@ -50,14 +50,25 @@ class HostelStudent(models.Model):
         if self.status != "paid":
             raise UserError("You can't assign a room if it's not paid.")
 
-        room_as_superuser = self.env['hostel.room'].sudo()
+        # room_as_superuser = self.env['hostel.room'].sudo()
 
-        room_rec = room_as_superuser.create({
-            "name": "Room 431",
-            "room_no": "431",
-            "room_category_id": self.env.ref("my_hostel.single_room_categ").id,
-        })
+        # room_rec = room_as_superuser.create({
+        #     "name": "Room 431",
+        #     "room_no": "431",
+        #     "room_category_id": self.env.ref("my_hostel.single_room_categ").id,
+        # })
+
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Assign Room',
+            'view_mode': 'form',
+            'res_model': 'hostel.assign.room.wizard',
+            'target': 'new',
+        }
 
     def action_remove_room(self):
         if self.env.context.get("is_hostel_room"):
             self.room_id = False
+
+    def paid(self):
+        self.status = 'paid'
