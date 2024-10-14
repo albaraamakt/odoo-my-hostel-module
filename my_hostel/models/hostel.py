@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from odoo import api, fields, models
+from odoo import api, fields, models, tools
 from odoo.exceptions import UserError
 from odoo.tools.translate import _
 
@@ -28,6 +28,8 @@ class HostelRoom(models.Model):
     )
     remarks = fields.Text("Remarks")
     cost_price = fields.Float("Room Cost")
+    student_per_room = fields.Integer('Student per Room')
+    rent_amount = fields.Integer('Rent')
 
     def grouped_data(self):
         data = self._get_average_cost()
@@ -198,8 +200,8 @@ class HostelRoomAvailability(models.Model):
     _auto = False
 
     room_id = fields.Many2one('hostel.room', 'Room', readonly=True)
-    student_per_room = fields.Integer('Student per Room', readonly=True)
     availability = fields.Integer('Availability', readonly=True)
+    student_per_room = fields.Integer('Student per Room', readonly=True)
     amount = fields.Integer('Amount', readonly=True)
 
     def init(self):

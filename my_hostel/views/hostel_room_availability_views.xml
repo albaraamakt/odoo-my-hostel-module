@@ -1,4 +1,4 @@
-<odoo>
+<!-- <odoo>
     <record id="hostel_room_availability_action" model="ir.actions.act_window">
         <field name="name">Hostel Room Availability Action</field>
         <field name="type">ir.action.act_window</field>
@@ -20,4 +20,4 @@
             </pivot>
         </field>
     </record>
-</odoo>
+</odoo> -->

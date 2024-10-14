@@ -39,6 +39,8 @@
                             <field name="allocation_date"/>
                             <field name="remarks"/>
                             <field name="description"/>
+                            <field name="student_per_room"/>
+                            <field name="rent_amount"/>
                         </group>
                     </group>
                 </sheet>
