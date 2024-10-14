@@ -192,3 +192,28 @@ class HostelRoomMember(models.Model):
     date_end = fields.Date("Termination Date")
     member_number = fields.Char()
     date_of_birth = fields.Date("Date of birth")
+
+class HostelRoomAvailability(models.Model):
+    _name = "hostel.room.availability"
+    _auto = False
+
+    room_id = fields.Many2one('hostel.room', 'Room', readonly=True)
+    student_per_room = fields.Integer('Student per Room', readonly=True)
+    availability = fields.Integer('Availability', readonly=True)
+    amount = fields.Integer('Amount', readonly=True)
+
+    def init(self):
+        tools.drop_view_if_exists(self.env.cr, self._table)
+        query = """
+            CREATE OR REPLACE VIEW hostel_room_availability AS (
+            SELECT
+                    min(h_room.id) as id,
+                    h_room.id as room_id,
+                    h_room.student_per_room as student_per_room,
+                    h_room.rent_amount as amount
+                FROM
+                    hostel_room AS h_room
+                GROUP BY h_room.id
+            );
+        """
+        self.env.cr.execute(query)
